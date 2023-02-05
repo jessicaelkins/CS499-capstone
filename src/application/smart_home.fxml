@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #121212;" stylesheets="@dark.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SmartHomeController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="1000.0" prefWidth="1600.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ButtonBar prefHeight="25.0" prefWidth="263.0">
+              <buttons>
+                <Button fx:id="homeButton" mnemonicParsing="false" text="Home" />
+                  <Button fx:id="usageButton" mnemonicParsing="false" onAction="#usageButtonPressed" text="Usage" />
+                  <Button fx:id="diagnosticsButton" mnemonicParsing="false" onAction="#diagnosticsButtonPressed" text="Diagnostics" />
+              </buttons>
+            </ButtonBar>
+            <HBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="25.0">
+               <children>
+                  <Pane prefHeight="650.0" prefWidth="1083.0" style="-fx-background-color: #1F1F1F;">
+                     <children>
+                        <ImageView fitHeight="624.0" fitWidth="951.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../house.jpg" />
+                           </image>
+                        </ImageView>
+                        <Pane id="Lighting Pane" fx:id="lightingOverlay" prefHeight="653.0" prefWidth="979.0">
+                           <children>
+                              <Circle id="Master Bath Overhead Light" fx:id="overheadLight_MasterBath" fill="YELLOW" layoutX="867.0" layoutY="61.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Master Bedroom Overhead Lamp" fx:id="MasterBedroom_OverheadLight" fill="YELLOW" layoutX="681.0" layoutY="127.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Living Room Overhead Light" fx:id="overheadLight_LR" fill="YELLOW" layoutX="214.0" layoutY="327.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 2 Overhead Light" fx:id="overheadLight_Bed2" fill="YELLOW" layoutX="550.0" layoutY="464.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 1 Overhead Light" fx:id="overheadLight_Bed1" fill="YELLOW" layoutX="464.0" layoutY="127.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Kitchen Overhead Light" fx:id="overheadLight_Kitchen" fill="YELLOW" layoutX="260.0" layoutY="127.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bathroom 1 Overhead Light" fx:id="overheadLight_Bath1" fill="YELLOW" layoutX="436.0" layoutY="500.0" onMouseClicked="#itemClicked" radius="14.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Master Bedroom Lamp 1" fx:id="lamp_MBa" fill="YELLOW" layoutX="617.0" layoutY="210.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Master Bedroom Lamp 2" fx:id="lamp_MBb" fill="YELLOW" layoutX="742.0" layoutY="210.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 2 Lamp 1" fx:id="lamp_Bed2a" fill="YELLOW" layoutX="622.0" layoutY="447.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 2 Lamp 2" fx:id="lamp_Bed2b" fill="YELLOW" layoutX="622.0" layoutY="545.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Living Room Lamp 1" fx:id="lamp_Livinga" fill="YELLOW" layoutX="141.0" layoutY="255.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Living Room Lamp 2" fx:id="lamp_Livingb" fill="YELLOW" layoutX="191.0" layoutY="409.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 1 Lamp 1" fx:id="lamp_Bed1a" fill="YELLOW" layoutX="527.0" layoutY="61.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bedroom 1 Lamp 2" fx:id="lamp_Bed1b" fill="YELLOW" layoutX="527.0" layoutY="158.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Rectangle id="Appliance - Dishwasher" fx:id="app_dishwasher" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="200.0" layoutY="38.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Appliance - Oven" fx:id="app_oven" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="306.0" layoutY="129.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Appliance - Microwave" fx:id="app_microwave" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="315.0" layoutY="49.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Appliance -Refridgerator" fx:id="app_refridgerator" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="306.0" layoutY="192.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Appliance - Living Room TV" fx:id="app_livingroom_TV" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="114.0" layoutY="310.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Appliance - Master Bedroom TV" fx:id="app_masterBedroom_TV" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="724.0" layoutY="40.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="44.0" />
+                              <Rectangle id="Appliance - Stove" fx:id="app_stove" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="306.0" layoutY="136.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Appliance - Washer" fx:id="app_washer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="499.0" layoutY="348.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Appliance - Dryer" fx:id="app_dryer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="536.0" layoutY="348.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Dining Window 2" fx:id="win_dining_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="116.0" layoutY="29.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Dining Window 1" fx:id="win_dining_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="70.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                              <Rectangle id="Kitchen Window 2" fx:id="win_kitchen_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="269.0" layoutY="31.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Kitchen Window 1" fx:id="win_kitchen_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="245.0" layoutY="31.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Bathroom 1 Window" fx:id="win_bathrooom1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="418.0" layoutY="565.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Bedroom 2 Window 1" fx:id="win_bedroom2_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="539.0" layoutY="565.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Bedroom 2 Window 2" fx:id="win_bedroom2_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="566.0" layoutY="565.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Master Bathroom Window" fx:id="win_masterbathroom" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="858.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Master Bedroom Window 3" fx:id="win_masterbedrrom_3" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="683.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Master Bedroom Window 2" fx:id="win_masterbedrrom_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="653.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Master Bedroom Window 1" fx:id="win_masterbedrrom_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="622.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Bedroom 1 Window 2" fx:id="win_bedroom1_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="469.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Bedroom 1 Window 1" fx:id="win_bedroom1_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="442.0" layoutY="30.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Living Room Window 3" fx:id="win_living_3" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="145.0" layoutY="437.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Living Room Window 4" fx:id="win_living_4" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="173.0" layoutY="437.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Dining Window 5" fx:id="win_dining_5" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="9.0" layoutX="56.0" layoutY="220.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+                              <Rectangle id="Living Room Window 1" fx:id="win_living_1" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="18.0" layoutX="99.0" layoutY="246.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="Foyer Window" fx:id="win_foyer" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="18.0" layoutX="245.0" layoutY="482.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="Living Room Window 2" fx:id="win_living_2" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="18.0" layoutX="99.0" layoutY="393.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="Dining Window 4" fx:id="win_dining_4" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="18.0" layoutX="31.0" layoutY="184.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="Dining Window 3" fx:id="win_dining_3" arcHeight="5.0" arcWidth="5.0" fill="BLUEVIOLET" height="18.0" layoutX="30.0" layoutY="58.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Circle id="Master Bedroom Exhaust Fan" fx:id="exhaustFan_masterbath" fill="YELLOW" layoutX="869.0" layoutY="113.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Circle id="Bathroom 1 Exhaust Fan" fx:id="exhaustFan_bath1" fill="YELLOW" layoutX="390.0" layoutY="539.0" onMouseClicked="#itemClicked" radius="9.0" stroke="YELLOW" strokeType="INSIDE" strokeWidth="3.0" />
+                              <Rectangle id="Front Door" fx:id="door_front" arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="9.0" layoutX="287.0" layoutY="528.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="37.0" />
+                              <Rectangle id="Back Door" fx:id="door_back" arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="35.0" layoutX="934.0" layoutY="263.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="To Garage Door" fx:id="door_toGarage" arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="35.0" layoutX="636.0" layoutY="238.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+                              <Rectangle id="Garage Door 1" fx:id="door_garage_1" arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="9.0" layoutX="693.0" layoutY="526.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="98.0" />
+                              <Rectangle id="Garage Door 2" fx:id="door_garage_2" arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" height="9.0" layoutX="797.0" layoutY="527.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="98.0" />
+                              <Rectangle id="Appliance - Water Heater" fx:id="app_waterHeater" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" layoutX="373.0" layoutY="234.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                              <Polygon id="Kitchen Sink Water" fx:id="water_kitchen" fill="AQUA" layoutX="257.0" layoutY="58.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Master Bedroom Shower" fx:id="water_masterShower" fill="AQUA" layoutX="902.0" layoutY="83.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Washing Machine Water" fx:id="water_washingMachine" fill="AQUA" layoutX="506.0" layoutY="367.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Master Bathroom Sink Water" fx:id="water_mastetBath_sink" fill="AQUA" layoutX="831.0" layoutY="116.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Master Bathroom Toilet Water" fx:id="water_masterbath_toilet" fill="AQUA" layoutX="862.0" layoutY="103.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Outside Faucet Water" fx:id="water_outside_faucet" fill="AQUA" layoutX="646.0" layoutY="548.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Bathroom 1 Shower Water" fx:id="water_outside_faucet1" fill="AQUA" layoutX="391.0" layoutY="467.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Bathroom 1 Toilet Water" fx:id="water_bathroom1_toilet" fill="AQUA" layoutX="387.0" layoutY="540.0" onMouseClicked="#itemClicked" points="0.0, 8.0, 24.0, -2.0, 0.0, -10.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Bathroom 1 Sink 1 Water" fx:id="water_bathroom1_sink1" fill="AQUA" layoutX="466.0" layoutY="500.0" onMouseClicked="#itemClicked" points="0.0, 8.0, 24.0, -2.0, 0.0, -10.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Bathroom 1 Sink 2 Water" fx:id="water_bathroom1_sink2" fill="AQUA" layoutX="466.0" layoutY="546.0" onMouseClicked="#itemClicked" points="0.0, 8.0, 24.0, -2.0, 0.0, -10.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Polygon id="Dishwasher Water" fx:id="water_dishwasher" fill="AQUA" layoutX="207.0" layoutY="55.0" onMouseClicked="#itemClicked" points="0.0, 10.0, 15.0, 10.0, 7.0, -16.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Rectangle id="Appliance - HVAC" fx:id="app_hvac" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="28.0" layoutX="60.0" layoutY="313.0" onMouseClicked="#itemClicked" stroke="BLACK" strokeType="INSIDE" width="28.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <VBox alignment="CENTER" prefWidth="403.0" style="-fx-background-color: #1F1F1F;">
+                     <children>
+                        <StackPane fx:id="temperaturePane" alignment="TOP_LEFT">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <StackPane fx:id="currentPane" alignment="TOP_LEFT" prefHeight="100.0">
+                                 <children>
+                                    <TextField fx:id="temperatureTextField" alignment="CENTER" editable="false" prefHeight="100.0">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="insideLabel" text="Inside">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="setLabel" text="Set To: " StackPane.alignment="BOTTOM_LEFT">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </StackPane>
+                        <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="decreaseTemperatureButton" alignment="CENTER" mnemonicParsing="false" onAction="#temperatureButtonPressed" prefHeight="35.0" prefWidth="100.0" text="&lt;">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                            <Button fx:id="increaseTemperatureButton" alignment="CENTER" mnemonicParsing="false" onAction="#temperatureButtonPressed" prefWidth="100.0" text="&gt;">
+                                 <HBox.margin>
+                                    <Insets right="25.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane alignment="TOP_LEFT" prefHeight="75.0">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <TextField fx:id="temperatureOutsideTextField" alignment="CENTER" editable="false" prefHeight="75.0" style="-fx-background-color: ffffff;">
+                                 <font>
+                                    <Font size="50.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="outsideLabel" text="Outside">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                           </children>
+                        </StackPane>
+                        <Pane prefWidth="226.0" stylesheets="@dark.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="allLightsButton" layoutX="24.0" layoutY="15.0" mnemonicParsing="false" onAction="#allLightsButtonPressed" prefHeight="30.0" prefWidth="200.0" text="All Lights On" />
+                              <Button fx:id="allDoorsLockedButton" layoutX="24.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#allDoorsLockedButtonPressed" prefHeight="30.0" prefWidth="200.0" text="All Doors Locked" />
+                              <Button fx:id="entertainmentOnButton" layoutX="24.0" layoutY="89.0" mnemonicParsing="false" onAction="#entertainmentOnButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Entertainment On" />
+                              <Button fx:id="garageDoorOpenButton" layoutX="24.0" layoutY="52.0" mnemonicParsing="false" onAction="#garageDoorOpenButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Garage Door Open" />
+                           </children>
+                        </Pane>
+                        <TextArea fx:id="quickStatusField" style="-fx-background-color: ffffff;" text="Quick Status Field">
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="5.0" top="5.0" />
+                           </VBox.margin></TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="86.0" fitWidth="445.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon.png" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
